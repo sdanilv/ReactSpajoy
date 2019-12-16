@@ -24,7 +24,7 @@ code {
     font-size: 15pt;
 }
 
-.btnWhite {
+.priceButton {
     padding: 0.375rem 1.75rem 0.375rem 0.75rem;
     height: calc(2.25rem + 2px);
     text-align: start;
@@ -43,30 +43,30 @@ code {
     border-color: #ced4da;
 }
 
-.btnWhite :hover {
+.priceButton :hover {
     color: black;
     background-color: #e2e6ea;
     border-color: #ced4da;
 }
 
-.btnWhite:focus, .btnWhite.focus {
+.priceButton:focus, .priceButton.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
-.btnWhite.disabled, .btnWhite:disabled {
+.priceButton.disabled, .priceButton:disabled {
     color: black;
     background-color: white;;
     border-color: #ced4da;
 }
 
-.btnWhite:not(:disabled):not(.disabled):active, .btnWhite:not(:disabled):not(.disabled).active, .show > .btnWhite.dropdown-toggle {
+.priceButton:not(:disabled):not(.disabled):active, .priceButton:not(:disabled):not(.disabled).active, .show > .priceButton.dropdown-toggle {
     color: black;
     background-color: white;
     border-color: #ced4da;
 }
 
-.btnWhite:not(:disabled):not(.disabled):active:focus, .btnWhite:not(:disabled):not(.disabled).active:focus, .show > .btnWhite.dropdown-toggle:focus {
+.priceButton:not(:disabled):not(.disabled):active:focus, .priceButton:not(:disabled):not(.disabled).active:focus, .show > .priceButton.dropdown-toggle:focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }

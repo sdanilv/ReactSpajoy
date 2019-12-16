@@ -1,21 +1,31 @@
-import React, {useState} from "react";
-import style from "./FindForm.module.css"
+import React, {useEffect, useState} from "react";
+import style from "./FindForm.module.scss"
 
 const FindForm = props => {
     const [isSeeChangePrice, seeChangePrice] = useState(false);
-
-
+    const [isSeeForm, seeForm] = useState(true);
+    useEffect(() => {
+        if (window.innerWidth < 725)
+            seeForm(false)
+    }, []);
+    const seeFormToggle = () => {
+        seeForm(!isSeeForm);
+    };
     return (
         <>
-           {window.innerWidth < 700 && <div>
-                <button type="hideButton">
+           <div className={style.hideButton}>
+                <button  type="hideButton" onClick={seeFormToggle}>
                     Знайти
                 </button>
-                <a type="findCart" href="#CartPlace">
-                    <span>0</span>
-                </a>
-            </div>}
-            <div className={style.findForm}>
+               <div className={style.cart}>
+                   <a href="#CartPlace">
+                       <img src="https://img.icons8.com/pastel-glyph/2x/shopping-cart--v2.png"
+                            alt="cart"/>
+                       <span>0</span>
+                   </a>
+               </div>
+            </div>
+            {isSeeForm && <div className={style.findForm}>
                 <label>Місто:</label>
                 <select>
                     <option selected value="empty">Обрати</option>
@@ -41,10 +51,10 @@ const FindForm = props => {
                 </select>
 
                 <label>Ціна:</label>
-                <div>
+
                     <button
-                        className={style.btnWhite}
-                        id="price" >
+                        className={style.priceButton}
+                        id="price">
                         100-1500
                     </button>
                     <div>
@@ -63,18 +73,20 @@ const FindForm = props => {
                         </div>}
 
                     </div>
-                </div><div className={style.submitFindFormDiv}>
-                <button className={style.submitFindForm} type="submit">
-                    Знайти
-                </button></div>
-                <div className={style.cartDiv}>
+                <div className={style.submitFindFormDiv}>
+                    <button className={style.submitFindForm} type="submit">
+                        Знайти
+                    </button>
+                </div>
+                <div className={style.cart}>
                     <a href="#CartPlace">
                         <img src="https://img.icons8.com/pastel-glyph/2x/shopping-cart--v2.png"
-                             alt="cart" className={style.cartImg} />
-                             <span>0</span>
+                             alt="cart"/>
+                        <span>0</span>
                     </a>
                 </div>
-            </div>
+
+            </div>}
         </>)
 
 };

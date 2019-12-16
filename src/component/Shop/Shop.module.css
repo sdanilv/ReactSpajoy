@@ -8,8 +8,8 @@
 }
 
 .shop img{
-    width: 200px;
-    height: 200px;
+    max-width: 300px;
+    height: auto;
 }
 .product{
     margin: 10px;
