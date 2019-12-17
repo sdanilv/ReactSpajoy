@@ -2,7 +2,7 @@ import React from "react";
 import mass from "../../images/mass.jpg"
 import spa from "../../images/spa.jpg"
 import salt from "../../images/salt.jpg"
-import style from "./Shop.module.css"
+import style from "./Shop.module.scss"
 import FindForm from "./FindForm/FindForm";
 const Shop = props => {
 return <div >
@@ -94,7 +94,7 @@ return <div >
                         <div className="pricing">
                             <p>Опис: Найкраща послуга у вашому місті!</p>
                             <p>Тривалість: 1 година</p>
-                            <p className="price">Ціна:<span price>1200</span>грн</p>
+                            <p className="price">Ціна:<span>1200</span>грн</p>
                         </div>
                     </div>
                     

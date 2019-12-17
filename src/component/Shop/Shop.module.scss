@@ -8,10 +8,16 @@
 }
 
 .shop img{
-    max-width: 300px;
+    /*min-width: 250px;*/
     height: auto;
+    width: 100%;
 }
 .product{
+    max-width: 23%;
+    min-width: 250px;
     margin: 10px;
     float: left;
+    @media (max-width: 500px){
+        min-width: 100%;
+    }
 }

@@ -1,26 +1,29 @@
-@mixin form{
-    height: 28px;
-    //padding: 0 10px auto;
-    padding-left: 10px;
-    color: rgb(87, 84, 84);
-    background-color: white;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+$changeWidth: 750px;
+$height: 28px;
+@mixin form {
+  height: $height;
+  //padding: 0 10px auto;
+  padding-left: 10px;
+  color: rgb(87, 84, 84);
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
 
-    &:hover {
-        color: black;
-        background-color: #e2e6ea;
-        border-color: #ced4da;
-    }
+  &:hover {
+    color: black;
+    background-color: #e2e6ea;
+    border-color: #ced4da;
+    cursor: pointer;
+  }
 }
 
 .findForm {
   position: sticky;
   top: 28px;
   display: flex;
-  background: #8e92fa;
+  background: rgb(248, 249, 250);
   padding: 5px 0;
-  @media all and (max-width: 725px) {
+  @media all and (max-width: $changeWidth) {
     display: block;
     .cart {
       display: none;
@@ -29,24 +32,22 @@
 
   > * {
     font-size: 1rem;
-    height: 30px;
+    height: $height;
     border-radius: 5px;
     margin-left: auto;
-    @media all and (max-width: 725px) {
+    @media all and (max-width: $changeWidth) {
       width: calc(100% - 20px);
       margin: 10px;
     }
   }
 
   select {
-      @include form;
+    @include form;
 
-    //padding-left: 10px;
-    //margin-right: auto;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
+  }
 
   &:after {
     content: "";
@@ -62,7 +63,7 @@
   top: 0;
   opacity: 0.5;
 
- &:hover {
+  &:hover {
     opacity: 1;
   }
 
@@ -76,7 +77,7 @@
     height: 28px;
   }
 
-  @media all and (min-width: 725px) {
+  @media all and (min-width: $changeWidth) {
     display: none;
   }
 }
@@ -84,10 +85,11 @@
 .cart {
   background: orange;
   padding: 0 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 0 auto;
 
   img {
+    margin-top: 2px;
     width: 20px;
     height: 20px;
   }
@@ -99,26 +101,64 @@
 }
 
 .priceButton {
-    @include form
-  //height: 28px;
-  //padding: 0 30px 0 10px;
-  //color: rgb(87, 84, 84);
-  //background-color: white;
-  //border: 1px solid #ced4da;
-  //border-radius: 0.25rem;
-  //
-  //&:hover {
-  //  color: black;
-  //  background-color: #e2e6ea;
-  //  border-color: #ced4da;
-  //}
+  @include form;
+  text-align: left;
+  font-size: 1em;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 
-.submitFindForm {
+.submitButton {
   padding: 0 20px;
   background: pink;
   border-width: 0;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white;
-  height: 100%;
+  height: $height;
 }
+
+.popup {
+  display: flex;
+  position: fixed;
+  top: 80px;
+  right: 100px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  min-width: 200px;
+
+  .priceForm{
+    max-width: 200px;
+.minPriceText{
+  width: 45%;
+}
+    .maxPriceText{
+      width: 45%;
+    }
+
+  }
+  .priceRange {
+    height: 30px;
+    width: 100%;
+  }
+    .priceRange:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .maxPriceRange {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .minPriceRange {
+    position: absolute;
+    bottom: 0;
+  }
+
+
+
+}
+
