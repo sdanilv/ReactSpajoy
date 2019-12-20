@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import style from "./FindForm.module.scss"
+import PriceRangeSlider from "../../../common/PriceRangeSlider/PriceRangeSlider";
 
 const FindForm = props => {
     const [isSeePriceArea, seePriceArea] = useState(false);
@@ -15,6 +16,9 @@ const FindForm = props => {
     };
     const seeFormToggle = () => {
         seeForm(!isSeeForm);
+    };
+    const submitForm = formParam =>{
+ console.log(formParam)
     };
     return (<>
         <div className={style.hideButton}>
@@ -55,7 +59,7 @@ const FindForm = props => {
             </select>
 
             <label>Ціна:</label>
-            {/*<div>*/}
+            <div className={style.popupContainer}>
             <button
                 onClick={seePriceAreaToggle}
                 className={style.priceButton}
@@ -63,22 +67,13 @@ const FindForm = props => {
                 100-1500
             </button>
             {isSeePriceArea &&
-            <div id="overlay" className={style.popup}>
-                {/*<input type="text"/>*/}
+            <div id="overlay" className={style.popup} onBlur={seePriceAreaToggle}>
                 <div className={style.priceForm}>
-                    <div className={style.priceRange}>
-                        <input type="range" className={style.maxPriceRange} name="maxPrice" min="1" max="100"/>
-                        <input type="range" className={style.minPriceRange} name="minPrice" min="1" max="100"/>
-                    </div>
-                    <input type="text" className={style.minPriceText} value="100" disabled/>
-                    <input type="text" className={style.maxPriceText} value="1500"/>
-                    <button type="cancel">
-                        Сбросить
-                    </button>
+                    <PriceRangeSlider onSubmit={submitForm} initialValues={{minSlider: 0, maxSlider: 1500} }/>
                 </div>
             </div>
             }
-            {/*</div>*/}
+            </div>
 
             <div className={style.submitFindFormDiv}>
                 <button className={style.submitButton} type="submit">

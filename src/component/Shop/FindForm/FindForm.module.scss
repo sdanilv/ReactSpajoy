@@ -120,45 +120,29 @@ $height: 28px;
 }
 
 .popup {
+  background: white;
   display: flex;
-  position: fixed;
-  top: 80px;
-  right: 100px;
+  position: absolute;
+  bottom: -130px;
+  right: -40px;
   border: 3px solid #f1f1f1;
   z-index: 9;
-  min-width: 200px;
-
-  .priceForm{
-    max-width: 200px;
-.minPriceText{
-  width: 45%;
-}
-    .maxPriceText{
-      width: 45%;
-    }
-
+  min-width: 140px;
+  padding: 10px;
+  @media all and (max-width: $changeWidth) {
+    bottom: 0.5vh;
+    right: 0;
   }
-  .priceRange {
-    height: 30px;
+}
+
+
+.popupContainer {
+  position: relative;
+  @media all and (max-width: $changeWidth) {
+    position: static;
+  }
+  button{
     width: 100%;
   }
-    .priceRange:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  .maxPriceRange {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .minPriceRange {
-    position: absolute;
-    bottom: 0;
-  }
-
-
-
 }
 

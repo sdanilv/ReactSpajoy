@@ -4,9 +4,11 @@ import spa from "../../images/spa.jpg"
 import salt from "../../images/salt.jpg"
 import style from "./Shop.module.scss"
 import FindForm from "./FindForm/FindForm";
+import PriceRangeSlider from "../../common/PriceRangeSlider/PriceRangeSlider";
 const Shop = props => {
 return <div >
     <FindForm/>
+
     <div  className={style.shop} >
 
         <div className ={style.product} town="Kiev"
