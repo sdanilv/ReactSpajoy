@@ -18,7 +18,8 @@ const FindForm = props => {
         seeForm(!isSeeForm);
     };
     const submitForm = formParam =>{
- console.log(formParam)
+        props.changePrice(formParam.minSlider, formParam.maxSlider)
+        // console.log(formParam.minSlider, formParam.maxSlider)
     };
     return (<>
         <div className={style.hideButton}>
@@ -64,12 +65,12 @@ const FindForm = props => {
                 onClick={seePriceAreaToggle}
                 className={style.priceButton}
                 id="price">
-                100-1500
+                {props.price.min}-{props.price.max}
             </button>
             {isSeePriceArea &&
             <div id="overlay" className={style.popup} onBlur={seePriceAreaToggle}>
                 <div className={style.priceForm}>
-                    <PriceRangeSlider onSubmit={submitForm} initialValues={{minSlider: 0, maxSlider: 1500} }/>
+                    <PriceRangeSlider onSubmit={submitForm} initialValues={{minSlider: props.price.min, maxSlider: props.price.max} }/>
                 </div>
             </div>
             }
