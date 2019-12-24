@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import style from "./FindForm.module.scss"
 import PriceRangeSlider from "../../../common/PriceRangeSlider/PriceRangeSlider";
+import {Field, reduxForm} from "redux-form";
 
 const FindForm = props => {
     const [isSeePriceArea, seePriceArea] = useState(false);
@@ -17,9 +18,8 @@ const FindForm = props => {
     const seeFormToggle = () => {
         seeForm(!isSeeForm);
     };
-    const submitForm = formParam =>{
-        props.changePrice(formParam.minSlider, formParam.maxSlider)
-        // console.log(formParam.minSlider, formParam.maxSlider)
+    const submitPriceForm = ({minSlider, maxSlider}) =>{
+        props.changePrice(minSlider, maxSlider)
     };
     return (<>
         <div className={style.hideButton}>
@@ -34,30 +34,30 @@ const FindForm = props => {
                 </a>
             </div>
         </div>
-        {isSeeForm && <div className={style.findForm}>
+        {isSeeForm && <form onSubmit={props.handleSubmit} className={style.findForm}>
             <label>Місто:</label>
-            <select defaultValue="empty">
+            <Field  component="select" name="town">
                 <option name="empty" value="empty">Обрати</option>
                 <option value="Kiev">Київ</option>
                 <option value="Zaporizha">Запоріжжя</option>
                 <option value="Odesa">Одеса</option>
-            </select>
+            </Field>
 
             <label>Кому:</label>
-            <select>
+            <Field component="select" name="gender">
                 <option value="empty">Обрати</option>
                 <option value="She">Для неї</option>
                 <option value="He">Для нього</option>
                 <option value="Three">Для когось</option>
-            </select>
+            </Field>
 
             <label>Категорія:</label>
-            <select>
+            <Field component="select" name="category">
                 <option value="empty">Обрати</option>
                 <option value="Spa">СПА</option>
                 <option value="Massage">Масаж</option>
                 <option value="Salt">Соляна кімната</option>
-            </select>
+            </Field>
 
             <label>Ціна:</label>
             <div className={style.popupContainer}>
@@ -70,7 +70,8 @@ const FindForm = props => {
             {isSeePriceArea &&
             <div id="overlay" className={style.popup} onBlur={seePriceAreaToggle}>
                 <div className={style.priceForm}>
-                    <PriceRangeSlider onSubmit={submitForm} initialValues={{minSlider: props.price.min, maxSlider: props.price.max} }/>
+                    <PriceRangeSlider onSubmit={submitPriceForm}
+                                      initialValues={{minSlider: props.price.min, maxSlider: props.price.max} }/>
                 </div>
             </div>
             }
@@ -88,10 +89,8 @@ const FindForm = props => {
                     <span>0</span>
                 </a>
             </div>
-        </div>
-        }
+        </form>}
     </>)
-
 };
 
-export default FindForm;
+export default reduxForm({form: "shopParam"})(FindForm);
