@@ -103,8 +103,8 @@ const ShopModule = {
     reducers: {
         // changePrice: (state, min, max) =>
         //     ({...state, price: {min, max}}),
-        changeViewParameters: (state, town, gender, category, price) =>
-            ({...state, filter: {...state.filter, town, gender, category, price}})
+        changeViewParameters: (state, filterParam) =>
+            ({...state, filter: {...state.filter, ...filterParam}})
     }
 };
 

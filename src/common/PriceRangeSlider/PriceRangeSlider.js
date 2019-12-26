@@ -14,7 +14,7 @@ const PriceRangeSlider = props => {
     };
 
     return (
-        <form onSubmit={props.handleSubmit} onBlur={props.handleSubmit} className={s.priceSlider}>
+        <form onBlur={props.handleSubmit} className={s.priceSlider}>
             <span>
     <Field name="minSlider" component="input" type="number" value={minPrice} min="0" max="1500"/>
     <Field name="maxSlider" component="input" type="number" value={maxPrice} min="0" max="1500"/>

@@ -6,13 +6,18 @@ import {getProductsWithFilter, getShopPrice, getShopProducts} from "../../redux/
 
 
 const Shop = props => {
-   const [price, changePrice] = useState({min:0, max:1500});
 
-    const submitFindForm = ({town, gender, category}) => {
-        props.changeViewParameters(town, gender, category, price)
+    const [price, changePrice] = useState({min: props.price.min, max: props.price.max});
+
+    // const submitFindForm = ({town, gender, category, price}) => {
+    //     props.changeViewParameters(town, gender, category, price)
+    // };
+    const submitFindForm = (formParam) => {
+        console.log({...formParam, price});
+        props.changeViewParameters({...formParam, price})
     };
-    const submitPriceForm = ({minSlider, maxSlider}) =>{
-        changePrice(minSlider, maxSlider)
+    const submitPriceForm = ({minSlider, maxSlider}) => {
+        changePrice({min: minSlider, max: maxSlider})
     };
 
     const products = props.products.map((product, index) => {
@@ -38,7 +43,7 @@ const Shop = props => {
         </div>
     });
     return <div>
-        <FindForm onSubmit={submitFindForm} submitPriceForm={submitPriceForm}  price={price}/>
+        <FindForm onSubmit={submitFindForm} submitPriceForm={submitPriceForm} price={price}/>
         <div className={style.shop}>
             {products}
         </div>
@@ -51,9 +56,11 @@ const Shop = props => {
         </div>
     </div>
 };
-const mapStateToProps = (state) => ({products: getProductsWithFilter(state), price: getShopPrice});
+const mapStateToProps = (state) => ({
+    products: getProductsWithFilter(state),
+    price: getShopPrice(state)
+});
 const mapDispatchToProps = ({shop}) => ({
-    // changePrice: (min, max) => shop.changePrice(min, max),
-    changeViewParameters: (town, gender, category) => shop.changeViewParameters(town, gender, category)
+    changeViewParameters: (param) => shop.changeViewParameters({...param})
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);

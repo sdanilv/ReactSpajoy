@@ -60,6 +60,7 @@ const FindForm = props => {
             <label>Ціна:</label>
             <div className={style.popupContainer}>
             <button
+                type="button"
                 onClick={seePriceAreaToggle}
                 className={style.priceButton}
                 id="price">
@@ -68,7 +69,7 @@ const FindForm = props => {
             {isSeePriceArea &&
             <div id="overlay" className={style.popup} onBlur={seePriceAreaToggle}>
                 <div className={style.priceForm}>
-                    <PriceRangeSlider onSubmit={props.submitPriceForm}
+                    <PriceRangeSlider onSubmit={props.submitPriceForm} onBlur={seePriceAreaToggle}
                                       initialValues={{minSlider: props.price.min, maxSlider: props.price.max} }/>
                 </div>
             </div>
