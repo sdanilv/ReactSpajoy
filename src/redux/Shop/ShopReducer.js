@@ -16,82 +16,82 @@ const initialState = {
 
     products: [
         {
-            town: "Kiev", gender: "She", category: "Spa",
+            town: "Київ", gender: "Для неї", category: "СПА",
             price: 600, duration: 1, dataId: "5d84a85391d8a57a0e4a5409", img: spa,
             describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Kiev", gender: "She", category: "Massage",
+            town: "Київ", gender: "Для неї", category: "Масаж",
             price: 200, duration: 4, dataId: "5d84a85391d8a57a0e4a5409", img: mass
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Kiev", gender: "She", category: "Massage",
+            town: "Київ", gender: "Для неї", category: "Масаж",
             price: 200, duration: 4, dataId: "5d84a85391d8a57a0e4a5409", img: mass
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Kiev", gender: "She", category: "Massage",
+            town: "Київ", gender: "Для неї", category: "Масаж",
             price: 1100, duration: 4, dataId: "5d84a85391d8a57a0e4a5409", img: mass
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Kiev", gender: "He", category: "salt",
+            town: "Київ", gender: "Для нього", category: "Соляна кімната",
             price: 12000, duration: 3, dataId: "5d84a85391d8a57a0e4a5409", img: salt
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Odessa", gender: "She", category: "Spa",
+            town: "Одеса", gender: "Для неї", category: "СПА",
             price: 100, duration: 1, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Odessa", gender: "He", category: "Spa",
+            town: "Одеса", gender: "Для нього", category: "СПА",
             price: 700, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Odessa", gender: "She", category: "Spa",
+            town: "Одеса", gender: "Для неї", category: "СПА",
             price: 800, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Odessa", gender: "She", category: "Spa",
+            town: "Одеса", gender: "Для неї", category: "СПА",
             price: 1300, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Odessa", gender: "She", category: "Spa",
+            town: "Одеса", gender: "Для неї", category: "СПА",
             price: 1400, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Zaporizha", gender: "She", category: "Spa",
+            town: "Запоріжжя", gender: "Для неї", category: "СПА",
             price: 300, duration: 3, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Zaporizha", gender: "He", category: "Spa",
+            town: "Запоріжжя", gender: "Для нього", category: "СПА",
             price: 100, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Zaporizha", gender: "He", category: "Spa",
+            town: "Запоріжжя", gender: "Для нього", category: "СПА",
             price: 100, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Zaporizha", gender: "He", category: "salt",
+            town: "Запоріжжя", gender: "Для нього", category: "Соляна кімната",
             price: 500, duration: 1, dataId: "5d84a85391d8a57a0e4a5409", img: salt
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Zaporizha", gender: "He", category: "Spa",
+            town: "Запоріжжя", gender: "Для нього", category: "СПА",
             price: 400, duration: 3, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         },
         {
-            town: "Zaporizha", gender: "She", category: "Spa",
+            town: "Запоріжжя", gender: "Для неї", category: "СПА",
             price: 1500, duration: 2, dataId: "5d84a85391d8a57a0e4a5409", img: spa
             , describe: "Найкраща послуга у вашому місті!"
         }

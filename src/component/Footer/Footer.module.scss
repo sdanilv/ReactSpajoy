@@ -9,4 +9,17 @@ margin: 10px;
   li{
     list-style-type:none;
   }
+
+  .firstPart{
+    .menu {
+      float:left;
+      width: 40%;
+    }
+    .help{
+      float:left;
+      width: 40%;
+    }
+
+  }
 }
+

@@ -36,25 +36,25 @@ const FindForm = props => {
             <label>Місто:</label>
             <Field  component="select" name="town">
                 <option name="empty" value="empty">Обрати</option>
-                <option value="Kiev">Київ</option>
-                <option value="Zaporizha">Запоріжжя</option>
-                <option value="Odesa">Одеса</option>
+                <option value="Київ">Київ</option>
+                <option value="Запоріжжя">Запоріжжя</option>
+                <option value="Одеса">Одеса</option>
             </Field>
 
             <label>Кому:</label>
             <Field component="select" name="gender">
                 <option value="empty">Обрати</option>
-                <option value="She">Для неї</option>
-                <option value="He">Для нього</option>
-                <option value="Three">Для когось</option>
+                <option value="Для неї">Для неї</option>
+                <option value="Для нього">Для нього</option>
+                <option value="empty">Для когось</option>
             </Field>
 
             <label>Категорія:</label>
             <Field component="select" name="category">
                 <option value="empty">Обрати</option>
-                <option value="Spa">СПА</option>
-                <option value="Massage">Масаж</option>
-                <option value="Salt">Соляна кімната</option>
+                <option value="СПА">СПА</option>
+                <option value="Масаж">Масаж</option>
+                <option value="Соляна кімната">Соляна кімната</option>
             </Field>
 
             <label>Ціна:</label>

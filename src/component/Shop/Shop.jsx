@@ -25,7 +25,7 @@ const Shop = props => {
             <div>
                 <div><img src={product.img} alt="Colorlib Template"/></div>
                 <div className="text py-3 px-3">
-                    <h3>{product.category} послуга в {product.town}</h3>
+                    <h3>{product.category} послуга {product.gender} в {product.town}</h3>
                     <div className="d-flex">
                         <div className="pricing">
                             <p>Опис: {product.describe}</p>

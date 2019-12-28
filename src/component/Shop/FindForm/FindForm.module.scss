@@ -138,8 +138,10 @@ $height: 28px;
 
 .popupContainer {
   position: relative;
+  width: 115px;
   @media all and (max-width: $changeWidth) {
     position: static;
+    width: calc(100% - 20px);
   }
   button{
     width: 100%;
