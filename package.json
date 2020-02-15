@@ -16,7 +16,7 @@
     "redux": "^4.0.4",
     "redux-form": "^8.2.6",
     "reselect": "^4.0.0",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
